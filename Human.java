@@ -1,66 +1,80 @@
-public class Student extends Human {
+public class Human {
 
-    private String faculty;
-    private int course;
-    public Human human;
+    private String name;
+    private String surname;
+    private int age;
+    private String sex;
+    private int growth;
+    private double weight;
 
-    public Student(Human human, String faculty, int course) {
+    public Human(String name, String surname, int age, String sex, int growth, double weight) {
         super();
-        this.faculty = faculty;
-        this.course = course;
-        this.human = human;
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+        this.sex = sex;
+        this.growth = growth;
+        this.weight = weight;
     }
 
-    public String getFaculty() {
-        return faculty;
+    public Human() {
+        super();
     }
 
-    public void setFaculty(String faculty) {
-        this.faculty = faculty;
+    public String getName() {
+        return name;
     }
 
-    public int getCourse() {
-        return course;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setCourse(int course) {
-        this.course = course;
+    public String getSurname() {
+        return surname;
     }
 
-    public Human getHuman() {
-        return human;
+    public void setSurname(String name) {
+        this.surname = surname;
     }
 
-    public void setHuman(Human human) {
-        this.human = human;
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public double getGrowth() {
+        return growth;
+    }
+
+    public void setGrowth(int growth) {
+        this.growth = growth;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        if (this.human.getName() != null) {
-            stringBuilder.append(this.human.getName() + " " + this.human.getSurname() + " (" + this.human.getSex() + ", age is " + this.human.getAge() + ", growth is " + this.human.getGrowth() + " sm, weight is " + human.getWeight() + " kg). This student is in ");
-                if (this.human.getSex().equals("male")) {
-                    stringBuilder.append("his ");
-                } else {
-                    stringBuilder.append("her ");
-                }
-                stringBuilder.append(this.getCourse());
-                if (this.getCourse() == 1) {
-                    stringBuilder.append("-st");
-                }
-                if (this.getCourse() == 2) {
-                    stringBuilder.append("-nd");
-                }
-                if (this.getCourse() == 3) {
-                    stringBuilder.append("-rd");
-                }
-                if (this.getCourse() == 4 || this.getCourse() == 5) {
-                    stringBuilder.append("-th");
-                }
-                stringBuilder.append(" year of the faculty of " + this.getFaculty() + "s.");
-            }
-//        stringBuilder.append(System.lineSeparator());
+        if (this.getName() != null) {
+            stringBuilder.append("The " + this.getSex() + " " + this.getName() + " " + this.getSurname() + "'s age is " + this.getAge() + ", growth is " + this.getGrowth() + " sm and weight is " + this.getWeight() + " kg.");
+        }
         return stringBuilder.toString();
     }
 }
