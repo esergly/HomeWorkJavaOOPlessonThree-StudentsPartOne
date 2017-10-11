@@ -2,13 +2,15 @@ public class Student extends Human {
 
     private String faculty;
     private int course;
-    public Human human;
 
-    public Student(Human human, String faculty, int course) {
-        super();
+    public Student(String name, String surname, int age, String sex, int growth, double weight, String faculty, int course) {
+        super(name, surname, age, sex, growth, weight);
         this.faculty = faculty;
         this.course = course;
-        this.human = human;
+    }
+
+    public Student(){
+       super();
     }
 
     public String getFaculty() {
@@ -27,20 +29,12 @@ public class Student extends Human {
         this.course = course;
     }
 
-    public Human getHuman() {
-        return human;
-    }
-
-    public void setHuman(Human human) {
-        this.human = human;
-    }
-
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        if (this.human.getName() != null) {
-            stringBuilder.append(this.human.getName() + " " + this.human.getSurname() + " (" + this.human.getSex() + ", age is " + this.human.getAge() + ", growth is " + this.human.getGrowth() + " sm, weight is " + human.getWeight() + " kg). This student is in ");
-                if (this.human.getSex().equals("male")) {
+        if (this.getName() != null) {
+            stringBuilder.append(this.getName() + " " + this.getSurname() + " (" + this.getSex() + ", age is " + this.getAge() + ", growth is " + this.getGrowth() + " sm, weight is " + this.getWeight() + " kg). This student is in ");
+                if (this.getSex().equals("male")) {
                     stringBuilder.append("his ");
                 } else {
                     stringBuilder.append("her ");
