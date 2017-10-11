@@ -1,3 +1,7 @@
+import sun.plugin.javascript.navig.Array;
+
+import java.util.Arrays;
+
 public class Group {
 
     private Student[] students = new Student[10];
@@ -19,21 +23,27 @@ public class Group {
         throw new AdditionalException();
     }
 
-    public void searchBySurname(String surname) {
+    public String[] searchBySurname(String surname) {
         int count = 0;
         int control = 0;
+        String[] result = new String[1];
         for (int i = 0; i < students.length; i++) {
-            if (students[i] != null && students[i].human.getSurname().equals(surname)) {
-                System.out.println(surname + " found at position(s): " + (i + 1));
+            if (students[i] != null && students[i].getSurname().equals(surname)) {
+                System.out.println("Found at position(s): " + (i + 1)+") "+students[i]);
+                StringBuffer sb = new StringBuffer(String.valueOf(students[i]));
                 control++;
                 count++;
+                String[] temp = new String[control];
+                temp[control-1] = sb.toString();
+                System.arraycopy(temp, 0, result, 0, temp.length);
             } else {
                 count++;
             }
             if (count == students.length - 1 && control == 0) {
-                System.out.println("A student with this surname " + surname + " isn't present in Genius group's list.");
+                System.out.println("A student with this surname " + surname+ " isn't present in Genius group's list.");
+                return null;
             }
-        }
+        }return result;
     }
 
     public void removeStudentFromTheGroup(int p) {
@@ -67,14 +77,15 @@ public class Group {
         if (i == null && j == null) {
             return 0;
         }
-        return i.human.getSurname().compareTo(j.human.getSurname());
+        return i.getSurname().compareTo(j.getSurname());
     }
 
     @Override
     public String toString() {
         sortBySurname();
         StringBuilder stringBuilder = new StringBuilder();
-        System.out.println("List of student's group \"Genius\":" + "\n");
+//        stringBuilder.append(System.lineSeparator());
+        System.out.println("List of student's group \"Genius\":");
         int j = 1;
         for (int i = 0; i < students.length; i++) {
             if (students[i] != null) {
