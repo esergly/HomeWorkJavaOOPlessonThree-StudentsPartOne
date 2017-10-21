@@ -82,7 +82,6 @@ public class Group {
 
     @Override
     public String toString() {
-        sortBySurname();
         StringBuilder stringBuilder = new StringBuilder();
 //        stringBuilder.append(System.lineSeparator());
         System.out.println("List of student's group \"Genius\":");
