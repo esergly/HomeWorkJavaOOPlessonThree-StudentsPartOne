@@ -21,7 +21,8 @@ public class Main {
         Student studentEight = new Student("Diane", "Holsson", 20, "female", 172, 46.3,"Politic", 2);
         Student studentNine = new Student("George", "Klarkson", 17, "male", 178, 80.8,"Mathematic", 4);
         Student studentTen = new Student("Pitt", "Erwin", 18, "male", 181, 85.1,"Logic", 5);
-        Student studentEleven = new Student("Paula", "Kotlin", 22, "female", 171, 47.3,"Politic", 3);//for reject of addition action test
+        //for reject of addition action test
+        Student studentEleven = new Student("Paula", "Kotlin", 22, "female", 171, 47.3,"Politic", 3);
 
       //Try to add new members into the student's group.
         try {
